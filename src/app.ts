@@ -54,6 +54,8 @@ app.get('/', (c) => {
       <p>Powered by Hono & Vercel Edge Runtime. Zero-JS Streaming Interface.</p>
     </footer>
   </div>
+</body>
+</html>
     `);
 
     // 2. ニュースフィードデータの送信 (1.5秒後)
@@ -110,10 +112,6 @@ app.get('/', (c) => {
       `);
     }
 
-    // 4. HTMLを閉じる
-    await streamInstance.write(`
-</body>
-</html>
-    `);
+
   });
 });
