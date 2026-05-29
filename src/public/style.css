@@ -73,21 +73,15 @@ body {
   font-weight: 300;
 }
 
-/* Dashboard Grid Layout (Two Islands) */
+/* Dashboard Layout (Single Column Feed) */
 .dashboard-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-bottom: 4rem;
-  max-width: 800px;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
-}
-
-@media (max-width: 900px) {
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* Island Card Styles */
@@ -277,16 +271,72 @@ body {
   font-size: 0.8rem;
 }
 
+.feed-title {
+  display: block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.feed-title:hover strong {
+  color: var(--accent-cyan);
+}
+
 .feed-item strong {
   display: block;
   color: var(--text-main);
-  margin-bottom: 0.15rem;
-  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  line-height: 1.45;
+  transition: color 0.2s ease;
+}
+
+.feed-domain {
+  color: var(--accent-cyan);
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.feed-meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.feed-meta div {
+  min-width: 0;
+  padding: 0.7rem 0.75rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.045);
+}
+
+.feed-meta dt {
+  color: var(--text-muted);
+  font-size: 0.66rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+}
+
+.feed-meta dd {
+  color: var(--text-main);
+  font-size: 0.82rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .feed-item p {
   color: var(--text-muted);
   line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+  .feed-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* Footer */
