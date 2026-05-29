@@ -17,5 +17,8 @@
     "@types/node": "^20.12.12",
     "tsx": "^4.10.5",
     "typescript": "^5.4.5"
-  }
+  },
+  "repository": "https://github.com/SoraKumo001/out-of-order-streaming-demo",
+  "author": "SoraKumo <info@croud.jp>",
+  "license": "MIT"
 }
