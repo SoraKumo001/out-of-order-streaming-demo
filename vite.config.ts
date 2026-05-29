@@ -5,16 +5,18 @@ export default defineConfig({
   build: {
     ssr: true,
     lib: {
-      entry: 'src/vercel.ts',
+      entry: {
+        index: 'src/vercel.ts',
+        server: 'src/index.ts'
+      },
       formats: ['es'],
-      fileName: () => 'index.js',
     },
     outDir: 'dist',
     emptyOutDir: true,
     minify: false,
     rollupOptions: {
       output: {
-        entryFileNames: 'index.js', // 出力ファイル名を index.js に強制
+        entryFileNames: '[name].js',
       },
       external: [
         ...builtinModules,

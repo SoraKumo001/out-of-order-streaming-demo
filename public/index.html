@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Declarative Partial Updates (Out-of-Order HTML Streaming)</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo-area">
+        <span class="logo-icon">⚡</span>
+        <h1>Out-of-Order HTML Streaming</h1>
+      </div>
+      <p class="subtitle">JavaScript無効でも動作する、ブラウザのネイティブ順不在部分更新デモ</p>
+      
+      <div class="warning-banner">
+        ⚠️ 本デモ（順不同ストリーミング）の動作には、Chrome等のブラウザで <code>chrome://flags/#enable-experimental-web-platform-features</code> を有効化する必要があります。
+      </div>
+    </header>
+
+    <!-- コンテンツ表示エリア (最初は1枚のスケルトンのみ配置) -->
+    <main class="dashboard-grid">
+      <?start name="feed-island"?>
+      <section class="island-card glass">
+        <div class="skeleton-loader">
+          <div class="skeleton-text animate-pulse"></div>
+          <div class="skeleton-text short animate-pulse"></div>
+        </div>
+      </section>
+      <?end?>
+    </main>
+
+    <footer class="app-footer">
+      <p>Powered by Hono & Vercel Edge Runtime. Zero-JS Streaming Interface.</p>
+    </footer>
+  </div>
+</body>
+</html>

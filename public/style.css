@@ -73,13 +73,13 @@ body {
   font-weight: 300;
 }
 
-/* Dashboard Layout (Single Island) */
+/* Dashboard Layout (Multi Card Grid) */
 .dashboard-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-bottom: 4rem;
-  max-width: 600px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -307,3 +307,27 @@ body {
   padding: 2.5rem 0;
   border-top: 1px solid var(--border-color);
 }
+
+/* Warning Banner */
+.warning-banner {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.2rem;
+  border-radius: 12px;
+  background: rgba(244, 63, 94, 0.1);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+  color: #f43f5e;
+  font-size: 0.9rem;
+  display: inline-block;
+  max-width: 650px;
+  text-align: left;
+}
+
+.warning-banner code {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
+  color: var(--accent-cyan);
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
