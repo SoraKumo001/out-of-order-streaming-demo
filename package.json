@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc --noEmit && node -e \"const fs=require('fs');fs.mkdirSync('dist',{recursive:true});fs.writeFileSync('dist/.keep','');if(fs.existsSync('public/style.css')){fs.copyFileSync('public/style.css','dist/style.css')}\"",
+    "build": "tsc --noEmit && cpy public/style.css dist/ --flat",
     "start": "tsx src/index.ts"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.12.12",
+    "cpy-cli": "7.0.0",
     "tsx": "^4.10.5",
     "typescript": "^5.4.5"
   },
